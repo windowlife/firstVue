@@ -16,7 +16,7 @@ const app = express()
 
 var appData = require('../ad.json')
 var apiRoutes = express.Router()
-app.use('/api', apiRoutes) 
+app.use('/api', apiRoutes)
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -37,19 +37,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ],
     },
 		before(app) {
-// 
+//
       app.get('/api/ad', (req, res) => {
-// 
+//
         res.json({
-// 
+//
           errno: 0,
-// 
+//
           data: appData
-// 
+//
         })
-// 
+//
       })
-// 
+//
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
